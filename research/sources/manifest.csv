@@ -1,0 +1,28 @@
+file,url,status,bytes,sha256,downloaded
+02_CICTT_Occurrence_Categories_v4.7_2017_ICAO.pdf,https://www.icao.int/sites/default/files/APAC/Meetings/2024/2024%20NASP%20Workshop/Supporting%20Documents/CAST-ICAO-Taxonomy-Occurrences.pdf,OK,329962,ae59359fce6313ea8836fafbf0a15d3cea9dcb8f99ed6e67582862bb085da18b,2026-10-21T12:14:42
+03_CICTT_Phase_of_Flight_Definitions_NTSB.pdf,https://www.ntsb.gov/safety/data/Documents/datafiles/PhaseofFlightDefinitions.pdf,OK,135745,f5abb6ddede298e19e692c0c120e6ed2933a3aa1b93943524af8f137a9dc3f3e,2026-10-21T12:14:42
+04_ICAO_GASP_2026-2028_Doc10004.pdf,https://www.icao.int/sites/default/files/safety/GASP/Documents/Doc.10004.2026-2028.GASP_.EN_.pdf,OK,801315,dd52db115509e9e82238c4e180399c24977f0875c9c2ec92eed94e566be57d7c,2026-10-21T12:14:43
+05_ICAO_Safety_Report_2026.pdf,https://www.icao.int/sites/default/files/sp-files/safety/Documents/ICAO_SR_2026.pdf,OK,1774706,6bcc252e9578e0a53fdafec571b4b4f86104c1175056516a94f843a432d75893,2026-10-21T12:14:44
+06_ICAO_Safety_Report_2025.pdf,https://www.icao.int/sites/default/files/sp-files/safety/Documents/ICAO_SR_2025.pdf?pubDate=20260427,OK,8320865,54a79f22ba457ff13bde8cb2931c491581454b7fa2f90ce0de663c2d7ec1a4f6,2026-10-21T12:14:44
+07_Boeing_Statistical_Summary.pdf,https://www.boeing.com/content/dam/boeing/v2/safety/statsum.pdf,OK,4251454,9d3b4fe76d937065015df9d884c3a6e5e3caac2e8479d88878d9769e0a466aab,2026-10-21T12:14:44
+08_ECCAIRS_Coding_Guidance_Chapter2.pdf,https://aviationreporting.eu/sites/default/files/2022-07/ECG%20Chapter%202_v1.0.pdf,FAILED: HTTP 502 Bad Gateway,0,,2026-10-21T12:15:36
+09_NASA_ASRS_Coding_Taxonomy.pdf,https://asrs.arc.nasa.gov/docs/dbol/ASRS_CodingTaxonomy.pdf,OK,113037,fb2e584bc5157cbadb55ecdf800e54b78096008efbb105ed5e9cc8cd0ed7d002,2026-10-21T12:14:58
+10_CICTT_Occurrence_Categories_v4.6_NTSB.pdf,https://www.ntsb.gov/safety/data/Documents/datafiles/OccurrenceCategoryDefinitions.pdf,OK,915704,922af083600971d7874ae8f57a888680ef450a8bac57cc8c76615400e9cafa6c,2026-10-21T12:14:59
+11_GAO_RCED-91-24_SDRS_Data_Quality.pdf,https://www.gao.gov/assets/rced-91-24.pdf,OK,1655320,7d328ac63a25a59dbbf2b7b5ba5cae98fefd990b46e3d38944fcacd5c81cb59b,2026-10-21T12:14:59
+12_FAA_Order_8010.2A_SDR_Program.pdf,https://www.faa.gov/documentLibrary/media/Order/Order_8010.2A.pdf,OK,1908342,db074f059db0a0ba99bdf8bbc3725166bc5626e8da201a9ed28ee362ea0877b3,2026-10-21T12:15:00
+13_TnT-LLM_KDD2024.pdf,https://dl.acm.org/doi/pdf/10.1145/3637528.3671647,FAILED: HTTP 403 Forbidden,0,,2026-10-21T12:15:00
+14_Clio_Anthropic_2024.pdf,https://arxiv.org/pdf/2412.13678,OK,11022879,9fc58931e8f1f5fc3bec070a5662bca7d136a0953fb53d602c7c9c4ec24cd2a7,2026-10-21T12:15:00
+15_SafeAeroBERT_NASA_2023.pdf,https://ntrs.nasa.gov/api/citations/20240003131/downloads/2023_AIAA_Aviation_SafeAeroBERT.pdf,OK,313645,f55397a8ade3d040f5187f1a8a84903e5c5f91293febb02f3388351e2cb559ce,2026-10-21T12:15:01
+16_NASA_ASRS_Text_Mining_DASC2023.pdf,https://ntrs.nasa.gov/api/citations/20230003910/downloads/2023_DASC_Walsh_Mbaye_Updated.pdf,OK,194723,7a45e4161ba2e6b9c76631b4cf09cd86864e4b5e30b176ad6de29052ad32f7d0,2026-10-21T12:15:01
+17_BERTopic_NTSB_MDPI_Aerospace_2025.html,https://www.mdpi.com/2226-4310/12/6/551,OK,2206,c7b8dc19447aa112da025dc11219f1593354d5d02e512c28835bd118e81ffae6,2026-10-21T12:15:02
+18_ICAO_MID_ASRG8_Final_Report.pdf,https://www.icao.int/sites/default/files/MID/MeetingDocs/2026/ASRG%208%20/Final-Report.pdf,OK,2243144,9e7fc6ede56cb84d33e8aa023debc6fe8b3bac176252564e823156a4c7fb7f7f,2026-10-21T12:15:02
+20_NTSB_CAROL.html,https://www.ntsb.gov/Pages/CAROL.aspx,OK,55328,95ec8b16c1faecd6b1b8606e5a714aebc75f2102f3ee9d76af8d2dd4146aedb9,2026-10-21T12:15:02
+21_NASA_ASRS_About_the_Data.html,https://asrs.arc.nasa.gov/search/dbol/aboutdata.html,OK,10465,3c35a7ab0fe0cc6cd112ec1c2425f87e78b638465175895b970f122a8fecb99d,2026-10-21T12:15:03
+22_FAA_ASIAS_AIDS_Info.html,https://asip.faa.gov/explore/ntsb/info,OK,136133,d784f4e05811dc19a8265f7b4cc8fd56a86203b17287ef598741de655aaf4214,2026-10-21T12:15:03
+23_TSB_Canada_Aviation_Data.html,https://www.tsb.gc.ca/eng/stats/aviation/data-5.html,FAILED: HTTP 403 Forbidden,0,,2026-10-21T12:15:03
+24_ATSB_National_Aviation_Occurrence_Database.html,https://www.atsb.gov.au/national-aviation-occurrence-database,OK,378291,67821d3e5ad6fb4f0556f0f68a6823e2e7da045d5fd639e7c2c54db3d3dbc069,2026-10-21T12:15:04
+25_ECCAIRS_Taxonomy_Browser.html,https://aviationreporting.eu/en/taxonomy-browser,FAILED: HTTP 502 Bad Gateway,0,,2026-10-21T12:15:49
+T1_real_pdf.pdf,http://127.0.0.1:8765/a.pdf,OK,17,488c2a19c5d6cc95144375ad5b39a78fcf41e3ed7ba76c10496c5870e72a734d,2026-10-21T12:03:11
+T2_fake_pdf_NOT_A_PDF.html,http://127.0.0.1:8765/b.pdf,NOT_PDF - open the URL in a browser and save the PDF by hand,23,8e32b34c713f427d38f51273054628c0273c244537e369bdeb84d6609607cc0a,2026-10-21T12:03:11
+T3_page.html,http://127.0.0.1:8765/p.html,OK,17,639cf5f89793ec65e282fe1de4de829b3ffe7095c04517cf64156d0d35579f56,2026-10-21T12:03:11
+T4_missing.pdf,http://127.0.0.1:8765/none.pdf,FAILED: HTTP 404 File not found,0,,2026-10-21T12:03:11

@@ -1,0 +1,14 @@
+{
+  "_about": "Quality gates. 'hard' gates must pass before a draft goes to human review; soft gates only lower the score. Thresholds are proposals: calibrate them on the first five gold documents.",
+  "D1_ask_coverage":   {"min": 1.0,  "hard": true},
+  "D2_fact_recall":    {"min": 0.85, "hard": true},
+  "D3_precision":      {"max_unsupported_high": 0, "hard": true},
+  "D4_depth":          {"min": 0.75, "floors_met": true, "hard": true},
+  "D5_req_quality":    {"min": 0.8,  "hard": false},
+  "D6_specificity":    {"min": 0.8,  "hard": false},
+  "D7_decisions":      {"min": 1.0,  "hard": true},
+  "D8_citations":      {"max_internal": 0, "max_unresolved": 0, "min_source_recall": 0.6, "hard": true},
+  "D9_figures":        {"max_high_defects": 0, "hard": true},
+  "D10_judge":         {"min": 0.5,  "hard": false},
+  "relative_to_gold":  {"min": 0.85}
+}

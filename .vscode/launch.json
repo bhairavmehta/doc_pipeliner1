@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Pipeline: sample story",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_pipeline.py",
+      "args": [
+        "--story",
+        "examples/sample_story/story.md",
+        "--research",
+        "examples/sample_story/research_findings.md",
+        "--sources",
+        "examples/sample_story/sources"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Pipeline: sample story (dry run)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_pipeline.py",
+      "args": [
+        "--story",
+        "examples/sample_story/story.md",
+        "--research",
+        "examples/sample_story/research_findings.md",
+        "--dry-run"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}

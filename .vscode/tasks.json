@@ -1,0 +1,173 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Setup: create environment and install packages",
+      "type": "shell",
+      "windows": {
+        "command": "py -m venv .venv && .venv\\Scripts\\python.exe -m pip install -r requirements.txt",
+        "options": {
+          "shell": {
+            "executable": "cmd.exe",
+            "args": [
+              "/d",
+              "/c"
+            ]
+          }
+        }
+      },
+      "linux": {
+        "command": "python3 -m venv .venv && .venv/bin/python -m pip install -r requirements.txt"
+      },
+      "osx": {
+        "command": "python3 -m venv .venv && .venv/bin/python -m pip install -r requirements.txt"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Pipeline: run",
+      "type": "shell",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "run_pipeline.py",
+        "--story",
+        "${input:story}",
+        "--research",
+        "${input:research}",
+        "--sources",
+        "${input:sources}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Pipeline: dry run (prompts only)",
+      "type": "shell",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "run_pipeline.py",
+        "--story",
+        "${input:story}",
+        "--research",
+        "${input:research}",
+        "--dry-run"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Pipeline: continue from a step",
+      "type": "shell",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "run_pipeline.py",
+        "--id",
+        "${input:storyId}",
+        "--from",
+        "${input:step}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Pipeline: run one step",
+      "type": "shell",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "run_pipeline.py",
+        "--id",
+        "${input:storyId}",
+        "--only",
+        "${input:step}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Quality: score a document against the gold document",
+      "type": "shell",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "quality/evaluate.py",
+        "${input:doc}",
+        "--findings",
+        "${input:research}",
+        "--story",
+        "${input:story}",
+        "--report",
+        "scorecard.md"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Quality: export training data for the critics",
+      "type": "shell",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "quality/training.py",
+        "export"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Quality: mine gold exemplars (after adding a gold document)",
+      "type": "shell",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "quality/patterns.py",
+        "mine"
+      ],
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "story",
+      "type": "promptString",
+      "description": "User story prompt file",
+      "default": "examples/sample_story/story.md"
+    },
+    {
+      "id": "research",
+      "type": "promptString",
+      "description": "research_findings.md",
+      "default": "examples/sample_story/research_findings.md"
+    },
+    {
+      "id": "sources",
+      "type": "promptString",
+      "description": "Folder with source papers",
+      "default": "examples/sample_story/sources"
+    },
+    {
+      "id": "storyId",
+      "type": "promptString",
+      "description": "Story id (folder name under stories/)",
+      "default": "123456"
+    },
+    {
+      "id": "step",
+      "type": "pickString",
+      "description": "Step",
+      "options": [
+        "setup",
+        "facts",
+        "plan",
+        "evidence",
+        "figures",
+        "draft",
+        "critique",
+        "build",
+        "qa",
+        "report"
+      ],
+      "default": "draft"
+    },
+    {
+      "id": "doc",
+      "type": "promptString",
+      "description": "Document to score (.md or .docx)",
+      "default": "stories/311617/content.md"
+    }
+  ]
+}

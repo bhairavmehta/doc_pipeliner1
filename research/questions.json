@@ -1,0 +1,42 @@
+{
+  "title": "Research Findings – Taxonomy Discovery Pipeline (US 311617)",
+  "purpose": "Refine the US 311617 requirements document (inputs, outputs, source handling, reruns, review handoff, validation, ICAO scope, build strategy).",
+  "questions": [
+    {
+      "id": "Q1",
+      "heading": "1. ICAO / CICTT taxonomy status",
+      "question": "Which version of the CICTT Aviation Occurrence Categories is current, how many categories does it have, what are its coding rules (multi-label, OTHR, UNK, F-POST), and which categories does ICAO treat as highest priority for commercial air transport?",
+      "keywords": ["CICTT", "occurrence category", "version", "revision", "usage notes", "multiple categories", "high-risk categories", "GASP", "CFIT", "LOC-I", "MAC", "runway excursion", "runway incursion", "OTHR", "UNK", "F-POST"]
+    },
+    {
+      "id": "Q2",
+      "heading": "2. Taxonomies: primary tree vs. facets",
+      "question": "Which industry taxonomies (CICTT Phase of Flight, ECCAIRS/ADREP, ATA chapters, HFACS, EASA risk areas, NASA ASRS anomaly codes, IATA) should be the primary tree and which should be secondary dimensions or crosswalks?",
+      "keywords": ["phase of flight", "taxonomy", "ADREP", "ECCAIRS", "ATA", "HFACS", "anomaly", "event type", "key risk area", "ERCS", "descriptive factors"]
+    },
+    {
+      "id": "Q3",
+      "heading": "3. Public data sources",
+      "question": "What public aviation safety report sources exist (NTSB, NASA ASRS, FAA AIDS, FAA SDRS, TSB Canada, ATSB, ECCAIRS), and what are their access limits, size, licensing and data-quality issues?",
+      "keywords": ["database", "download", "export", "records", "narrative", "incident reports", "accident", "data quality", "duplicate", "prevalence", "voluntary", "access"]
+    },
+    {
+      "id": "Q4",
+      "heading": "4. Automated taxonomy discovery (state of the art)",
+      "question": "What methods build taxonomies or topic hierarchies from text automatically (LLM-based taxonomy generation, clustering, BERTopic, aviation language models), and what are the lessons on reproducibility, stability, human review and evaluation metrics?",
+      "keywords": ["taxonomy generation", "clustering", "topic model", "BERTopic", "LLM", "embedding", "hierarchy", "human", "evaluation", "coherence", "kappa", "agreement", "reproducib"]
+    },
+    {
+      "id": "Q5",
+      "heading": "5. Build strategy: most likely path first or the entire tree?",
+      "question": "Is it better to build a taxonomy top-down, bottom-up, depth-first (most likely path first) or breadth-first (entire tree), and what stopping rules are used?",
+      "keywords": ["top-down", "bottom-up", "hierarchy", "breadth", "depth", "iterative", "seed", "saturation", "stop", "other category", "residual"]
+    },
+    {
+      "id": "Q6",
+      "heading": "6. Governance and AI assurance",
+      "question": "How are safety taxonomies versioned and change-controlled (CICTT, ECCAIRS), and what AI assurance guidance (EASA AI Concept Paper, FAA) is relevant for an AI-assisted pipeline with human review?",
+      "keywords": ["revision", "record of revisions", "version", "change", "migration", "artificial intelligence", "learning assurance", "human", "explainability", "concept paper"]
+    }
+  ]
+}

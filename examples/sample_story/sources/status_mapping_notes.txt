@@ -1,0 +1,3 @@
+Status mapping notes (sample data)
+Carrier status codes can be mapped to eight shared statuses: Created, Shipped, In transit, Out for delivery, Delivered, Exception, Returned, Unmapped.
+About 3% of events use rare carrier codes that need manual mapping by the support team.

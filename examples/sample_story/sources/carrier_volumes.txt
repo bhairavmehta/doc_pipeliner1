@@ -1,0 +1,5 @@
+Carrier volume summary (sample data)
+Carrier A handles 45% of orders and supports webhooks.
+Carrier B handles 25% of orders and supports webhooks.
+Carrier C handles 15% of orders and supports polling only; webhooks are announced but the date is not confirmed.
+Carriers D and E handle the remaining 15%.

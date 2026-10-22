@@ -1,0 +1,7 @@
+.venv/
+.env
+__pycache__/
+stories/
+.cache/
+training/
+stub_calls.log

@@ -1,0 +1,162 @@
+{
+  "_about": "K2 section-pattern library. Curated by hand: what a strong section of each type must cover. 'match' = words in a section heading that identify the type; 'min_requirements' = floor of ID'd requirement rows; 'topics' = checklist; a topic counts as covered when any of its keywords appears in the section (case-insensitive, regex allowed). Gold exemplar rows are mined into exemplars.json by: python quality/patterns.py mine",
+  "types": {
+    "summary": {
+      "match": ["summary", "overview", "introduction"],
+      "min_requirements": 0,
+      "min_words": 120,
+      "topics": [
+        {"id": "what_it_does", "label": "What the system does, in one paragraph", "keywords": ["reads", "turns", "collects", "organi[sz]es", "produces", "builds"]},
+        {"id": "who_decides", "label": "Who reviews or approves the output", "keywords": ["review", "approv", "SME", "sign[- ]off"]},
+        {"id": "feeds", "label": "Where the result is used", "keywords": ["feeds", "used by", "used in", "supports", "result"]},
+        {"id": "doc_scope", "label": "What this document defines and which decisions it asks for", "keywords": ["this document", "defines", "propos", "answers"]},
+        {"id": "ask_table", "label": "Ask-to-section table", "keywords": ["\\| *ask *\\|"]}
+      ]
+    },
+    "at_a_glance": {
+      "match": ["at a glance", "architecture", "process overview", "pipeline flow", "how it works"],
+      "min_requirements": 0,
+      "topics": [
+        {"id": "figure", "label": "A flow figure", "keywords": ["!\\[figure", "figure \\d"]},
+        {"id": "stage_table", "label": "A table naming each stage and what it does", "keywords": ["\\| *stage *\\|", "\\| *step *\\|"]},
+        {"id": "feedback_loop", "label": "The review or feedback loop", "keywords": ["feedback", "loop", "review"]}
+      ]
+    },
+    "inputs": {
+      "match": ["input"],
+      "min_requirements": 5,
+      "topics": [
+        {"id": "source_register", "label": "Source register: owner, access, licence, date range, refresh cadence", "keywords": ["register", "owner", "licen[cs]e", "refresh", "cadence", "date range"]},
+        {"id": "reference_versioned", "label": "Reference standards pinned to an exact version and stored machine-readably", "keywords": ["v\\d+\\.\\d+", "version", "machine-readable", "pinned"]},
+        {"id": "secondary_roles", "label": "Role of each secondary taxonomy or reference (primary, facet, crosswalk, optional)", "keywords": ["facet", "crosswalk", "role", "optional"]},
+        {"id": "priority_refs", "label": "Priority references used to rank work", "keywords": ["priorit", "rank", "high-risk", "tier"]},
+        {"id": "minimum_fields", "label": "Minimum fields every record must have", "keywords": ["minimum (report |record )?fields", "fields:", "required fields"]},
+        {"id": "run_config", "label": "Run configuration recorded with every run (scope, thresholds, model and prompt versions, seed)", "keywords": ["configuration", "config", "seed", "threshold"]},
+        {"id": "existing_labels", "label": "How existing labels or codes in the data are used (check, not ground truth)", "keywords": ["existing (category )?codes", "ground truth", "existing labels", "weak label"]}
+      ]
+    },
+    "outputs": {
+      "match": ["output", "deliverable"],
+      "min_requirements": 5,
+      "topics": [
+        {"id": "versioned_artifact", "label": "Main artifact with permanent IDs, status and version fields", "keywords": ["permanent id", "stable id", "status", "version"]},
+        {"id": "criteria", "label": "Definition / criteria per item: include, exclude, don't-confuse-with", "keywords": ["criteria", "include if", "exclude", "definition"]},
+        {"id": "examples", "label": "Examples per item, typical and borderline, with reasons", "keywords": ["example", "borderline"]},
+        {"id": "assignments", "label": "Record-level assignments with confidence and labelling rules", "keywords": ["confidence", "assignment", "multi-label"]},
+        {"id": "changelog", "label": "Changelog, run manifest and machine-readable diff with migration notes", "keywords": ["changelog", "change log", "manifest", "diff", "migration"]},
+        {"id": "formats", "label": "Formats for machines and for people, and where they are stored", "keywords": ["json", "csv", "excel", "pdf", "format"]},
+        {"id": "versioning_scheme", "label": "Version-number rules: what triggers major, minor and patch", "keywords": ["major", "minor", "patch"]}
+      ]
+    },
+    "source_handling": {
+      "match": ["source handling", "sources", "data handling", "data management", "ingest"],
+      "min_requirements": 6,
+      "topics": [
+        {"id": "read_only", "label": "Read-only access to source systems", "keywords": ["read-only", "never changes source", "read only"]},
+        {"id": "snapshots", "label": "Dated snapshots with cut-off and checksum", "keywords": ["snapshot", "checksum", "cut-off", "cutoff"]},
+        {"id": "common_format", "label": "One common format / schema for all sources", "keywords": ["common format", "normali[sz]e", "schema", "common fields"]},
+        {"id": "duplicates", "label": "Duplicate and cross-source linking rules", "keywords": ["duplicate", "dedup", "link the same", "same event"]},
+        {"id": "low_quality", "label": "Low-information or low-quality records", "keywords": ["short narrative", "low-information", "low quality", "minimum length"]},
+        {"id": "bias", "label": "Reporting bias / fair counting across sources", "keywords": ["prevalence", "lower bound", "normali[sz]e volume", "bias", "fair counting"]},
+        {"id": "access_security", "label": "Access, licence, classification and approved environment", "keywords": ["classification", "approved environment", "licen[cs]e", "security"]},
+        {"id": "traceability", "label": "Traceability of results back to sources", "keywords": ["traceab", "lineage", "from each source"]},
+        {"id": "language", "label": "Non-English or unusual text", "keywords": ["language", "translat", "non-english"]},
+        {"id": "out_of_scope", "label": "Out-of-scope records kept, not deleted", "keywords": ["out-of-scope", "out of scope", "not deleted"]},
+        {"id": "new_sources", "label": "How a new source is added (register, mapping, impact check)", "keywords": ["new source", "adding a source", "impact check", "onboard"]}
+      ]
+    },
+    "rerun": {
+      "match": ["rerun", "re-run", "reprocess", "refresh", "rebuild"],
+      "min_requirements": 5,
+      "topics": [
+        {"id": "repeatable", "label": "Same inputs give the same output: pinned models, fixed seeds, cached model responses", "keywords": ["repeatab", "same inputs", "seed", "cache", "pinned", "determin"]},
+        {"id": "stable_ids", "label": "Stable IDs across runs; match to existing items first", "keywords": ["stable id", "keep their id", "ids? (are )?stable", "matched to existing"]},
+        {"id": "locked", "label": "Approved items are locked; changes only through review", "keywords": ["locked", "approved means", "cannot apply", "without (sme )?review"]},
+        {"id": "modes", "label": "Incremental vs full run modes", "keywords": ["incremental", "full rerun", "full run", "two modes"]},
+        {"id": "change_report", "label": "Diff / change report against the last published version", "keywords": ["diff", "change report", "against the last"]},
+        {"id": "stability_metric", "label": "Stability measure with a target", "keywords": ["stability", "adjusted rand", "keep the same"]},
+        {"id": "restartable", "label": "Checkpoints and resume after failure", "keywords": ["checkpoint", "restart", "resume"]},
+        {"id": "triggers", "label": "What triggers a rerun, and the schedule", "keywords": ["trigger", "schedule", "cadence"]}
+      ]
+    },
+    "review_handoff": {
+      "match": ["handoff", "hand-off", "review", "approval", "sign-off"],
+      "min_requirements": 4,
+      "topics": [
+        {"id": "review_pack", "label": "Review pack contents per run", "keywords": ["review pack", "package", "pack per run"]},
+        {"id": "batching", "label": "Manageable batch size and ordering", "keywords": ["batch", "no more than", "ordered by"]},
+        {"id": "decision_options", "label": "One structured decision per item (approve, edit, merge, split, reject, defer)", "keywords": ["approve", "reject", "merge", "split", "defer"]},
+        {"id": "feeds_next_run", "label": "Decisions feed the next run", "keywords": ["next run", "feed", "not proposed again"]},
+        {"id": "status_flow", "label": "Status flow from proposed to published", "keywords": ["status", "proposed", "published"]},
+        {"id": "audit", "label": "Audit trail: reviewer, decision, reason, date, version", "keywords": ["audit", "reviewer", "reason"]},
+        {"id": "roles", "label": "Named roles and responsibilities", "keywords": ["role", "responsib", "owner"]}
+      ]
+    },
+    "validation": {
+      "match": ["validation", "acceptance", "quality checks", "metrics", "success criteria"],
+      "min_requirements": 0,
+      "min_table_rows": 4,
+      "topics": [
+        {"id": "coverage", "label": "Coverage target", "keywords": ["coverage"]},
+        {"id": "size", "label": "Minimum size / granularity", "keywords": ["minimum size", "per category", "granular"]},
+        {"id": "completeness", "label": "Completeness of each item", "keywords": ["completeness", "every category has", "every item has"]},
+        {"id": "agreement", "label": "Inter-rater agreement with kappa and a human baseline", "keywords": ["kappa", "agreement", "inter-rater"]},
+        {"id": "stability", "label": "Stability between runs", "keywords": ["stability", "between runs"]},
+        {"id": "numeric_targets", "label": "Numeric targets (%, ≥)", "keywords": ["≥ ?\\d", ">= ?\\d", "\\d+ ?%"]}
+      ]
+    },
+    "decision": {
+      "match": ["(decision)", "decision"],
+      "min_requirements": 0,
+      "topics": [
+        {"id": "question", "label": "The open question, quoted with who asked and when", "keywords": ["question", "asked", "open"]},
+        {"id": "options_table", "label": "Option (or Proposal) table with pros and cons or reasons", "keywords": ["\\| *option.*\\| *pros", "\\| *proposal *\\|"]},
+        {"id": "recommendation", "label": "A single recommendation with concrete steps", "keywords": ["recommend", "proposal for team agreement", "propos"]},
+        {"id": "specifics", "label": "Concrete members, codes or numbers in each option", "keywords": ["\\b[A-Z]{2,5}(-[A-Z0-9]{1,4})?\\b,", "\\d+"]},
+        {"id": "agreement", "label": "Questions for the team and a sign-off table", "keywords": ["agree\\?", "questions for the team", "sign-off", "sign off"]}
+      ]
+    },
+    "method": {
+      "match": ["method", "approach", "algorithm", "model", "discovery"],
+      "min_requirements": 4,
+      "topics": [
+        {"id": "baseline", "label": "Baseline model compared with an alternative", "keywords": ["baseline", "compared with", "compare"]},
+        {"id": "parameters", "label": "Key parameters tied to the acceptance rules", "keywords": ["minimum cluster", "threshold", "parameter", "tune"]},
+        {"id": "llm_role", "label": "What the LLM does, with an 'Other' escape option", "keywords": ["llm", "other", "language model"]},
+        {"id": "stopping", "label": "Stopping or saturation rule", "keywords": ["saturation", "stop", "stopping"]},
+        {"id": "scale", "label": "How it scales (e.g. distil to a smaller classifier) and how that is tested", "keywords": ["classifier", "at scale", "held-out", "distil"]},
+        {"id": "registry", "label": "Model and prompt registry", "keywords": ["registry", "prompt version", "model version"]}
+      ]
+    },
+    "governance": {
+      "match": ["governance", "assurance", "risk", "compliance", "responsible ai"],
+      "min_requirements": 0,
+      "topics": [
+        {"id": "human_posture", "label": "Human-in-the-loop posture", "keywords": ["human", "approve", "propos"]},
+        {"id": "data_split", "label": "Separate training, validation and test samples", "keywords": ["training", "held-out", "test sample", "validation"]},
+        {"id": "registry_audit", "label": "Registry and audit trail", "keywords": ["registry", "audit"]},
+        {"id": "guidance", "label": "Which external guidance applies, binding or not, and its status", "keywords": ["guidance", "concept paper", "regulat", "not binding", "sr 11-7", "nist"]}
+      ]
+    },
+    "open_items": {
+      "match": ["open items", "open questions", "actions", "next steps"],
+      "min_requirements": 0,
+      "min_table_rows": 4,
+      "topics": [
+        {"id": "owner_column", "label": "Owner per item", "keywords": ["\\| *owner *\\|"]},
+        {"id": "needed_by", "label": "When it is needed", "keywords": ["needed by", "before first", "due"]}
+      ]
+    },
+    "references": {
+      "match": ["references", "bibliography", "key sources"],
+      "min_requirements": 0,
+      "min_references": 5,
+      "topics": [
+        {"id": "links", "label": "Links or document IDs for each reference", "keywords": ["https?://", "\\.(org|gov|com|int|eu)\\b", "doi"]},
+        {"id": "versions", "label": "Versions and dates of standards", "keywords": ["v\\d", "\\(\\w* ?\\d{4}\\)", "\\d{4}"]},
+        {"id": "caveat", "label": "Caveat on what could not be confirmed", "keywords": ["caveat", "could not", "to be confirmed", "indicative"]}
+      ]
+    }
+  },
+  "internal_files": ["research_evidence.md", "research_findings.md", "plan.json", "content.md", "stories/", "questions.json", "Research findings, Section"]
+}
